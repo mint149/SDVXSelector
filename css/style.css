@@ -1,14 +1,21 @@
 body{
 	width: 320px;
+	margin: 0 auto;
 	font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+}
+#reload{
+	background-color: #CCFFCC;
+}
+#music{
+	background-color: #CCCCFF;
 }
 
 p{
-	font-size: 22px;
+	font-size: 16px;
 }
 
 input{
-	font-size: 22px;
+	font-size: 16px;
 	width: 320px;
-	height: 80px;
+	height: 50px;
 }
