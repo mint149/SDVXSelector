@@ -1,5 +1,5 @@
 body{
-	width: 480px;
+	width: 320px;
 	font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
 }
 
@@ -9,6 +9,6 @@ p{
 
 input{
 	font-size: 22px;
-	width: 480px;
+	width: 320px;
 	height: 80px;
 }
