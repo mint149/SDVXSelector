@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/musicList.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<title>SDVXSelector</title> 
+	</head> 
+	<body> 
+		<div class="contents">
+			<div class="part">
+				<div class="logo">
+					<h2 class="logo">ロードラ ダメージ計算機</h2>
+					<p>(Ver5.2.0.0対応)</p>
+				</div>
+				<div class="panelAndDamage">
+					<p>パネル選択:</p>
+					<table id="panels">
+						<tr>
+							<td>
+								<select class="panel" name="panel1">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel2">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel3">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel4">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select class="panel" name="panel5">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel6">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel7">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+							<td>
+								<select class="panel" name="panel8">
+									<option value=0 selected>剣</option>
+									<option value=1>槍</option>
+									<option value=2>弓</option>
+									<option value=3>杖</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<p>で<strong id="damage">0</strong>ダメージ</p>
+				</div>
+				<div class="history">
+					<p>更新履歴:</p>
+					<p>2015/01/26…レイアウト変更。全力の一撃など、チェックボックスを使用するものが動作していなかった問題を修正。ツイン、フィニッシュに対応。</p>
+					<p>2015/01/25…公開。</p>
+				</div>
+			</div>
+			<div class="part">
+				<div class="menu" id="units">
+					<p>1体目の攻撃力：<input class="option" id="unit1atk" value=10000>
+						<select name="unit1job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<p>2体目の攻撃力：<input class="option" id="unit2atk" value=10000>
+						<select name="unit2job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<p>3体目の攻撃力：<input class="option" id="unit3atk" value=10000>
+						<select name="unit3job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<p>4体目の攻撃力：<input class="option" id="unit4atk" value=10000>
+						<select name="unit4job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<p>5体目の攻撃力：<input class="option" id="unit5atk" value=0>
+						<select name="unit5job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<p>6体目の攻撃力：<input class="option" id="unit6atk" value=0>
+						<select name="unit6job">
+							<option value=0 selected>剣</option>
+							<option value=1>槍</option>
+							<option value=2>弓</option>
+							<option value=3>杖</option>
+						</select>
+					</p>
+					<input class="option" type="button" id="calc" value="計算" onclick="calc();">
+				</div>
+				<div class="menu">
+					<p>アサルト系スキル(%値)：<input class="option" id="assault" value=0></p>
+					<p>アサルト系スキル(固定値)：<input class="option" id="assaultNum" value=0></p>
+					<p>属性特攻(上昇値)：<input class="option" id="tokkou" value=0></p>
+					<p>全力の一撃：<input type="checkbox" id="zenryoku" value=true></p>
+					<p>弱点判定：<input type="checkbox" id="weak" value=true></p>
+					<p>敵の防御：<input class="option" id="defence" value=0></p>
+					<p>カットイン：<input type="checkbox" id="cutIn" value=true></p>
+					<p>稲妻カットイン：<input type="checkbox" id="thunderCutIn" value=true></p>
+				</div>
+				<div class="menu">
+					<p id="isTwin">ツイン：
+						剣<input type="checkbox" id="twinSword" value=true>
+						槍<input type="checkbox" id="twinRance" value=true>
+						弓<input type="checkbox" id="twinArrow" value=true>
+						杖<input type="checkbox" id="twinRod" value=true>
+					</p>
+					<p id="isFinish">フィニッシュ：
+						剣<input type="checkbox" id="finishSword" value=true>
+						槍<input type="checkbox" id="finishRance" value=true>
+						弓<input type="checkbox" id="finishArrow" value=true>
+						杖<input type="checkbox" id="finishRod" value=true>
+					</p>
+					<p>アキュート(%値)：<input class="option" id="akyuto" value=0></p>
+					<p>属性補正(0〜10)：<input class="option" id="hosei" value=0></p>
+					<p>属性補正強化：<input class="option" id="element" value=0></p>
+					<p>チェイン補正：<input class="option" id="chainhosei" value=0></p>
+					<p>ダメージ倍率：<input class="option" id="damageBairitu" value=0></p>
+					<p>乱数(0〜9)：<input class="option" id="rand" value=0></p>
+				</div>
+			</div>
+			<div>
+				<p>各項目の説明:</p>
+				<p>攻撃力…ユニットの攻撃力を入れてください。4人PTの場合は、5体目と6体目の攻撃力を0にしてください。あまぎなどの単体エンハンスを使用する場合は、上昇後の攻撃力を入れてください。</p>
+				<p>アサルト…フェンリスなどの%値上昇の場合は(%値)に、リーサルなどの固定値上昇の場合は(固定値)の方に入力してください。</p>
+				<p>属性特攻…ホロウ･デスなど、種族や属性に対して攻撃力を上げるスキルに対応します。上昇値をそのまま入力してください。</p>
+				<p>アキュート…弱点特攻系のスキルに対応します。シャープストライクVは100、アキュート系は上昇分を入力してください。</p>
+				<p>属性補正…移動中に属性パネルを踏むと増えるアレです。0〜10を入力してください。</p>
+				<p>属性補正強化…マクスウェルなど、属性補正を強化するスキルに対応します。上昇値をそのまま入力してください。</p>
+				<p>チェイン補正…あまぎなど、チェイン補正を上昇させるスキルに対応します。上昇する%値を入力してください。</p>
+				<p>ダメージ倍率…ロイドなど、ダメージをn倍にするスキルに対応します。ロイドなら50,クロシオは60という風に、上昇する%値を入力してください。</p>
+				<p>乱数…ダメージ計算時に発生する乱数をここで調整できます。0〜9を入力してください。</p>
+				<p></p>
+			</div>
+		</div>
+	</body>
+</html>
